@@ -35,6 +35,11 @@ export interface MicrosoftLoginProps extends React.Props<MicrosoftLogin> {
    * Additional class name string.
    */
   className?: string,
+
+  /**
+   * Custom button
+   */
+  customButton?: any,
 }
 
 export interface MicrosoftLoginButtonProps extends React.Props<MicrosoftLoginButton> {

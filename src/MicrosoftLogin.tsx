@@ -218,7 +218,12 @@ export default class MicrosoftLogin extends React.Component<
   }
 
   render() {
-    const { buttonTheme, className } = this.props;
+    const { buttonTheme, className, customButton } = this.props;
+    if (customButton) {
+      return React.cloneElement(customButton, {
+        onClick: this.login.bind(this)
+      });
+    }
     return (
       <div>
         <MicrosoftLoginButton
