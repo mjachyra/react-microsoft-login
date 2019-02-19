@@ -21,7 +21,9 @@ export default class MicrosoftLogin extends React.Component<
       msalInstance:
         props.clientId &&
         CLIENT_ID_REGEX.test(props.clientId) &&
-        new UserAgentApplication(props.clientId, null, () => {}),
+        new UserAgentApplication(props.clientId, null, () => {}, {
+          cacheLocation: "localStorage"
+        }),
       scope: scope,
       debug: debug || false,
       withUserData: withUserData || false
